@@ -24,13 +24,13 @@ DOMAIN = {
             'firstname': {
                 'type': 'string',
                 'minlength': 1,
-                'maxlength': 10,
+                'maxlength': 32,
                 'required': True,
             },
             'lastname': {
                 'type': 'string',
                 'minlength': 1,
-                'maxlength': 15,
+                'maxlength': 32,
                 'required': True,
             },
             'role': {
