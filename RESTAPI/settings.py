@@ -1,5 +1,5 @@
 # замените user, password, ds049945.mongolab.com, example на ваши данные доступа к БД.
-MONGO_URI = "mongodb://janus:1511@127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb"
+MONGO_URI = "mongodb://janus:1511@127.0.0.1:27017/"
 
 # По умолчанию Eve запускает API в режиме "read-only" (т.е. поддерживаются только GET запросы),
 # мы включаем поддержку методов POST, PUT, PATCH, DELETE.
