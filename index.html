@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bot Settings</title>
+    <style>
+        body {
+            background-image: url('back.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: white;
+            font-family: 'Tahoma', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .settings-container {
+            text-align: center;
+            background-color: rgb(0, 102, 204); /* Shade of blue as specified */
+            border: 2px solid white; /* White border */
+            padding: 20px;
+            border-radius: 10px; /* Optional: adds rounded corners to the container */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional: adds shadow for a 3D effect */
+            width: auto; /* Adjust the width as needed */
+            max-width: 600px; /* Maximum width of the container */
+            box-sizing: border-box; /* Includes padding and border in the width */
+        }
+        input, select, button {
+            color: black; /* Text color for inputs and buttons for better readability */
+        }
+        label {
+            display: block; /* Make labels take the full width */
+            margin: 10px 0; /* Spacing for better readability */
+        }
+    </style>
+</head>
+<body>
+    <div class="settings-container">
+        <h2>Adjust Parameters</h2>
+        <label for="k-slider">K (1-20):</label>
+        <input type="range" id="k-slider" name="k" min="1" max="20" value="10">
+        <span id="k-value">10</span>
+
+        <br><br>
+
+        <label for="llm-temperature">LLMTemperature (0-1):</label>
+        <input type="number" id="llm-temperature" name="llm_temperature" min="0" max="1" step="0.01" value="0.5">
+
+        <br><br>
+
+        <label for="llm-model">LLMModel:</label>
+        <select id="llm-model" name="llm_model">
+            <option value="GPT-3.5-turbo">GPT-3.5-turbo</option>
+            <option value="gpt-4-1106-turbo">gpt-4-1106-turbo</option>
+        </select>
+
+        <br><br>
+
+        <button onclick="saveSettings()">Save</button>
+    </div>
+
+    <script>
+        // Update displayed K value
+        document.getElementById('k-slider').oninput = function() {
+            document.getElementById('k-value').innerText = this.value;
+        };
+
+        // Function to post data back to your bot server
+        async function saveSettings() {
+            const k = document.getElementById('k-slider').value;
+            const temperature = document.getElementById('llm-temperature').value;
+            const model = document.getElementById('llm-model').value;
+
+            // Post data back to your bot server (implement the server-side to handle this)
+            // You will have to use the Telegram Web App API to communicate with your bot
+            // Example: window.Telegram.WebApp.init(); window.Telegram.WebApp.MainButton.onClick(...
+        }
+    </script>
+</body>
+</html>
